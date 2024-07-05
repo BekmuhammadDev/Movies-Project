@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./assets/images/4503915.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Movies</title>
+
+</head>
+
+<body class="h-14 bg-gradient-to-r from-purple-500 to-pink-500">
+
+    <header class="bg-h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-3 w-full fixed z-50">
+
+        <div class="container mx-auto">
+
+            <nav class="flex justify-between items-center h-[70px]">
+
+                <a href="#" class=" text-white text-2xl font-bold hidden sm:block">All-Movies</a>
+
+                <label>
+                    <!-- <input id="search" type="search" placeholder="Enter film Name"
+                        class="p-3 w-[95vw] mx-4 md:w-[520px] rounded-xl focus:ring-2 ring-white "> -->
+                    <div class="tidySearchBox">
+                        <input id="search" type="search" placeholder="Enter film Name"
+                        class="p-5 w-[95vw] mx-4 md:w-[520px]"
+                        >
+                        <button><span></span></button>
+                    </div>
+                </label>
+
+
+                <ul class=" gap-x-[32px] hidden sm:flex">
+                    <li>
+                        <a href="./whishlist.html" id="liked" class="text-white flex gap-x-3 items-center">
+                            <span class="color-yellow"><i class="bi bi-star"></i></span><span id="like-count">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="theme">
+                    </li>
+                    <li>
+                        <select id="lang" class="p-1 rounded-[32px]">
+                            <option>Russian</option>
+                            <option>English</option>
+                            <option>Uzbek</option>
+                        </select>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="flex">
+        <aside id="sidebar"
+            class="bg-h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500 w-[300px] min-h-screen p-5 fixed z-40 pt-[100px]  ">
+
+            <form action="#" class="p-3 text-#141212" id="search-form">
+
+                <label for="name">
+                    <p class="text-white">Enter Film Name</p>
+                    <input id="name" class="form-input" type="search" placeholder="Enter Film Name">
+                </label>
+
+                <label for="raiting">
+                    <p class="text-white">Enter Film raiting</p>
+                    <input class="form-input bg-[#f8f2f6] " id="rating" type="number" placeholder="Enter Film raiting"
+                        max="10">
+                </label>
+
+                <label for="ganers">
+                    <p class="text-white">select Film ganres</p>
+                    <select class="form-input" id="geners">
+                        <option disabled selected>Select film ganers</option>
+                    </select>
+                </label>
+
+
+                <button type="submit" class="button">search</button>
+                <br>
+                <button type="reset" class="button" id="refresh">Refresh</button>
+
+
+            </form>
+
+        </aside>
+
+        <section class="w-full h-screen  ">
+            <div class="container mx-auto  pt-[100px] pl-[140px] ">
+                <div class=" grid grid-cols-5 gap-x-[150px] gap-y-[50px] " id="cards">
+
+                    <div class="loader"></div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+</body>
+<script src="./JS/unils.js"></script>
+<script src="./JS/db.js"></script>
+<script src="./JS/index.js"></script>
+
+</html>

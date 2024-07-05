@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#theme{
+    appearance: none;
+    border: 1px solid white;
+    display: block;
+    width: 70px;
+    height: 32px;
+    border-radius: 32px;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+
+}
+
+#theme::after{
+content:"";
+display: block;
+width: 30px;
+height: 30px;
+background-color: yellow;
+border-radius: 50%;
+position: absolute;
+
+}
+
+#theme:checked::after {
+ transform: translateX(38px);
+ background-color: blue;
+ transition: all 0.4s ease-in-out;
+
+}
+
+.form-input{
+    width: 90%;
+    height: 40px;
+    border-radius: 15px;
+    padding: 3px 15px;
+    margin-bottom: 15px;
+
+}
+
+.card{
+    box-shadow: 0 0 10px rgb(208, 206, 206);
+    max-width: 300px;
+    border-radius:4px;
+    overflow: hidden;
+
+}
+
+.card.h2{
+    font-size: 20px;
+    font-weight: 700px;
+    margin-bottom: -12px;
+}
+
+.card:hover{
+    box-shadow: 0 0 10px rgb(149, 145, 179);
+    
+}
+
+.card-body{
+    padding: 12px;
+}
+
+.card button{
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid sienna;
+
+}
+
+
+.card button:first-child{
+    background-color:rgb(206, 10, 160) ;
+    color: #fff;
+
+}
+
+.card button:first-child:hover{
+    background-color: #030cff;
+}
+
+.card button:last-child{
+    border: 1px solid rgb(234, 58, 9);
+    padding: 7px 10px;
+}  
+
+ .card button:last-child:focus{
+    background-color: rgb(243, 243, 8);
+    color: #fff;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    clip-path: inset(0 3ch 0 0);
+    animation: l4 1s steps(4) infinite;
+    color: white;
+    position: relative;
+    left: 650px;
+    top: 380px;
+  }
+  .loader:before {
+    content:"Loading...."
+  }
+  @keyframes l4 {to{clip-path: inset(0 -1ch 0 0)}}
+
+
+  .button {
+    display: grid;
+    place-content: center;
+    position: relative;
+    width: 200px;
+    height: 30px;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 1rem;
+    text-decoration: none;
+    background-color: #1639d2;
+    transition: background-color 2s;
+  }
+  
+  .button::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    z-index: -1;
+    border-radius: 1.5rem;
+    background-image: linear-gradient(
+      90deg,
+      red,
+      yellow,
+      lime,
+      aqua,
+      blue,
+      fuchsia,
+      red
+    );
+    background-size: 500%;
+    box-shadow: .4rem .4rem 2rem #0002;
+    animation: moveBackground 10s infinite linear;
+  }
+  
+  @keyframes moveBackground {
+    to {
+      background-position: 200%;
+    }
+  }
+  
+  .button:hover {
+    background-color: #fff0;
+  }
+
+
+  /* ======================================= */
+  .tidySearchBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tidySearchBox input{
+    color-scheme: dark;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px 9px;
+    flex-grow: 1;
+    background: #111;
+    border: none;
+    color: #fff;
+    border-radius: 7px 0 0 3px;
+  }
+  .tidySearchBox button{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    right: 9px;
+    border-radius: 50%;
+    border: 5px solid #000000;
+    background: #111;
+    box-sizing: border-box;
+    transition: 0.5s all;
+  }
+  .tidySearchBox button:after, .tidySearchBox button:before{
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  .tidySearchBox button:after{
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-sizing: border-box;
+    left: 15%;
+    top: 15%;
+  }
+  .tidySearchBox button:before{
+    height: 11px;
+    width: 1px;
+    background: white;
+    transform: rotate(-45deg);
+    border: 1px solid white;
+    right: 35%;
+    bottom: 5px;
+  }
+  .tidySearchBox span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    border: 5px solid #16a085;
+    border-top-color: #c0392b;
+    border-right-color: #f39c12;
+    border-left-color: #2980b9;
+    scale: 1.03;
+    transform: translate(-50%, -50%);
+    transition: 0.35s all;
+  }
+  .tidySearchBox button:hover{
+    scale: 1.25;
+  }
+  .tidySearchBox button:hover span{
+    transform: translate(-50%, -50%) rotate(960deg);
+  }
+  .tidySearchBox button:active span{
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
