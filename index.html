@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="h-14 bg-gradient-to-r from-purple-500 to-pink-500">
+<body class="h-14 bg-gradient-to-r from-purple-500 to-pink-500"id="body-theme">
 
     <header class="bg-h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500 p-3 w-full fixed z-50">
 
@@ -23,8 +23,6 @@
                 <a href="#" class=" text-white text-2xl font-bold hidden sm:block">All-Movies</a>
 
                 <label>
-                    <!-- <input id="search" type="search" placeholder="Enter film Name"
-                        class="p-3 w-[95vw] mx-4 md:w-[520px] rounded-xl focus:ring-2 ring-white "> -->
                     <div class="tidySearchBox">
                         <input id="search" type="search" placeholder="Enter film Name"
                         class="p-5 w-[95vw] mx-4 md:w-[520px]"
@@ -34,14 +32,16 @@
                 </label>
 
 
-                <ul class=" gap-x-[32px] hidden sm:flex">
+                <ul class=" gap-x-[32px] hidden sm:flex items-center">
                     <li>
                         <a href="./whishlist.html" id="liked" class="text-white flex gap-x-3 items-center">
                             <span class="color-yellow"><i class="bi bi-star"></i></span><span id="like-count">0</span>
                         </a>
                     </li>
                     <li>
-                        <input type="checkbox" id="theme">
+                        <!-- <input type="checkbox" id="theme"> -->
+                        <!-- <button type="checkbox" id="toggle-dark-mode" class="text-[26px]"> <i class="bi bi-moon-fill"></i></button> -->
+                        <button type="checkbox" id="toggle-dark-mode" class="text-[26px]"><i class="bi bi-moon-fill"></i></button>
                     </li>
                     <li>
                         <select id="lang" class="p-1 rounded-[32px]">
@@ -60,8 +60,7 @@
 
 
     <main class="flex">
-        <aside id="sidebar"
-            class="bg-h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500 w-[300px] min-h-screen p-5 fixed z-40 pt-[100px]  ">
+        <aside id="sidebar"class="bg-h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500 w-[300px] min-h-screen p-5 fixed z-40 pt-[100px]  ">
 
             <form action="#" class="p-3 text-#141212" id="search-form">
 
@@ -94,7 +93,7 @@
         </aside>
 
         <section class="w-full h-screen  ">
-            <div class="container mx-auto  pt-[100px] pl-[140px] ">
+            <div class="container mx-auto  pt-[100px] pl-[140px]  ">
                 <div class=" grid grid-cols-5 gap-x-[150px] gap-y-[50px] " id="cards">
 
                     <div class="loader"></div>

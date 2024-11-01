@@ -10,7 +10,7 @@ const refresh= $('#refresh');
 
 
 
-const data = movies.splice(0, 100)
+const data = movies.splice(0, 4000)
 
 //--------------- normalize data  -----------------------//
 
@@ -189,3 +189,23 @@ function renderLikeCount(data) {
 }
 
 renderLikeCount(JSON.parse(localStorage.getItem('liked-list')));
+
+//-------------------- dark mode -----------------------------------------------//
+
+ // Dark mode'ni faollashtiruvchi funksiyani yozing
+ function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  }
+
+  // Foydalanuvchi tanlovini yuklang
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // Tugmani bosish orqali dark mode'ni o'zgartirish
+  document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
